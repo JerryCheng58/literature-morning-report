@@ -1,0 +1,3 @@
+display_name: Literature Morning Report
+short_description: Build personalized daily research literature reports from a profile template.
+default_prompt: Generate a literature morning report using my research_profile.yml, deduplicate against my history file, summarize papers bilingually, and export citation files.

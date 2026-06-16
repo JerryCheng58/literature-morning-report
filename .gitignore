@@ -1,0 +1,11 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+reports/
+sent_history.tsv
+research_profile.yml
+*.log
+.DS_Store
+Thumbs.db

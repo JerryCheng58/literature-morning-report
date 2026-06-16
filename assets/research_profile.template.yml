@@ -1,0 +1,88 @@
+# Copy this file to research_profile.yml and edit it for one researcher.
+discipline: "biomedical sciences"
+research_direction: "example topic: tumor immunotherapy and microbiome biomarkers"
+
+# Core concepts that define relevance. Use English database terms when possible.
+core_keywords:
+  - "tumor immunotherapy"
+  - "immune checkpoint inhibitor"
+  - "PD-1"
+  - "PD-L1"
+  - "CTLA-4"
+  - "gut microbiome"
+  - "microbiota"
+  - "biomarker"
+  - "treatment response"
+  - "resistance mechanism"
+  - "single-cell RNA sequencing"
+  - "spatial transcriptomics"
+  - "patient-derived organoid"
+  - "tumor microenvironment"
+
+# Each item is a complete Boolean expression. Items are searched separately and merged.
+# Use this for strict AND relationships, such as organoid AND disease.
+must_include_logic:
+  - '(tumor immunotherapy OR immune checkpoint inhibitor OR PD-1 OR PD-L1 OR CTLA-4) AND (gut microbiome OR microbiota OR biomarker OR treatment response OR resistance)'
+  - '(single-cell RNA sequencing OR spatial transcriptomics OR multi-omics) AND (tumor microenvironment OR immune checkpoint inhibitor OR immunotherapy response)'
+  - '(organoid OR patient-derived organoid OR tumor organoid OR organoid-on-chip) AND (immunotherapy OR drug screening OR treatment response OR resistance mechanism)'
+
+exclude_keywords:
+  - "plant disease"
+  - "veterinary"
+  - "case report"
+  - "conference abstract"
+
+preferred_databases:
+  - "pubmed"
+  - "europepmc"
+  - "semantic_scholar"
+  - "openalex"
+  - "crossref"
+  # Optional by field:
+  # - "arxiv"
+  # Credential-gated international databases:
+  # - "web_of_science"
+  # - "scopus"
+  # - "embase"
+  # - "ieee_xplore"
+
+journal_threshold:
+  min_impact_factor: 5
+  allowed_quartiles: ["Q1"]
+  allowed_cas_zones: ["1"]
+  allow_unverified_as_adjacent: true
+
+report_language: "zh-en"
+delivery_email: "user@example.com"
+delivery_time: "10:00"
+timezone: "Asia/Shanghai"
+max_papers: 5
+lookback_days: 7
+
+export_formats:
+  - "ris"
+  - "bibtex"
+  - "enw"
+  - "csl-json"
+
+report_sections:
+  - "search_window"
+  - "candidate_count"
+  - "english_title"
+  - "chinese_title"
+  - "journal_year_ids"
+  - "quality_evidence"
+  - "abstract_content"
+  - "chinese_abstract_summary"
+  - "relevance"
+  - "key_mechanisms"
+  - "hypothesis"
+  - "ideas"
+
+email:
+  subject_prefix: "文献晨报"
+  provider: "smtp_or_resend"
+
+quality_sources:
+  journal_metrics_file: "journal_metrics.tsv"
+  note: "Optional local TSV with columns journal,impact_factor,quartile,cas_zone,evidence_url."

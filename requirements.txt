@@ -1,0 +1,3 @@
+# The core CLI uses only Python standard library.
+# Optional: install PyYAML for broader YAML syntax support.
+PyYAML>=6.0.0
